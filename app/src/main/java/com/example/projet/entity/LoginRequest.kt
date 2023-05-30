@@ -1,3 +1,3 @@
-package com.example.projet
+package com.example.myapplication.entity
 
 data class LoginRequest(val username: String, val password: String)

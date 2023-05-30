@@ -28,4 +28,33 @@ class MainActivity : AppCompatActivity() {
 
 
     })
+        /* private fun login(username: String, password: String) {
+        val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
+            this.runOnUiThread {
+                Toast.makeText(this, throwable.message, Toast.LENGTH_SHORT).show()
+            }
+
+        }
+        CoroutineScope(Dispatchers.IO+ exceptionHandler).launch {
+            val user = LoginRequest(username,password)
+            //Log.d("user","user = ${user.username} , password = ${user.password}")
+            val response = AuthRepository.createApiService().login(username,password)
+            withContext(Dispatchers.Main) {
+                if (response.isSuccessful && response.body() != null) {
+                    //Toast.makeText(this@SingIn, "clientid : ${response.body()!!.ClientId}", Toast.LENGTH_SHORT).show()
+                    if(response.body()!!.ClientId == 0){
+                        Toast.makeText(this@SingIn, "password or username invalid", Toast.LENGTH_SHORT).show()
+                    }else{
+                        binding.password.setText("")
+                        binding.username.setText("")
+                        val intent = Intent(this@SingIn, HomeActivity::class.java)
+                        intent.putExtra("ClientId", response.body()!!.ClientId.toString()) // Replace "key" and "value" with your actual data
+                        startActivity(intent)
+                    }
+                } else {
+                    Toast.makeText(this@SingIn, "Une erreur s'est produite", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }*/
 }}

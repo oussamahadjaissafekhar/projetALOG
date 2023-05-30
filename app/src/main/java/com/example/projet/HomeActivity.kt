@@ -21,6 +21,12 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        /*myModel = ViewModelProvider(this).get(MyModel::class.java)
+        if (intent != null && intent.hasExtra("ClientId")) {
+            val value = intent.getStringExtra("ClientId")
+            Log.d("ClientId", value.toString())
+            myModel.ClientId = value!!.toInt()
+        }*/
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHost) as NavHostFragment
         navController = navHostFragment.navController
