@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/addEmptyReturnFragment">
+    <fragment
+        android:id="@+id/addEmptyReturnFragment"
+        android:name="com.example.freight_management2.fragments.addEmptyReturnFragment"
+        android:label="fragment_add_empty_return"
+        tools:layout="@layout/fragment_add_empty_return" />
+</navigation>
