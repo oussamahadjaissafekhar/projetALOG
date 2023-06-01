@@ -1,0 +1,17 @@
+version: '3'
+services:
+  user_management_service1:
+    build: ./user_management_service
+    ports:
+    - "8086:5000"
+  user_management_service2:
+    build: ./user_management_service
+    ports:
+    - "8087:5000"
+  user_management_nginx:
+    build: ./user_management_nginx 
+    ports:
+    - "8085:8080"
+    depends_on:
+      - user_management_service1
+      - user_management_service2

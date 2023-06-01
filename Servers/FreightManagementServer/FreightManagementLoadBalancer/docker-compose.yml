@@ -1,0 +1,17 @@
+version: '3'
+services:
+  freight_management_service1:
+    build: ./freight_management_service
+    ports:
+    - "8082:5000"
+  freight_management_service2:
+    build: ./freight_management_service
+    ports:
+    - "8083:5000"
+  freight_management_nginx:
+    build: ./freight_management_nginx 
+    ports:
+    - "8081:8080"
+    depends_on:
+      - freight_management_service1
+      - freight_management_service2
